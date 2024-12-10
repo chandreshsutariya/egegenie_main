@@ -15,7 +15,7 @@ origins = [
 # Add CORSMiddleware to the FastAPI app.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # allows all origin
+    allow_origins=[origins],  # allows all origin
     allow_credentials=True,  # Allow credentials (cookies, authorization headers)
     allow_methods=["*"],     # Allows all HTTP methods (GET, POST, etc.)
     allow_headers=["*"],     # Allows all custom headers
@@ -30,6 +30,7 @@ G = Genie(open_api_key_=a, \
 
 class Message(BaseModel):
     user_says: str
+
 
 rc = G.prepare_chain()
 # i = input("egeGenie: ")
